@@ -1,0 +1,22 @@
+@mixin newFont($family,$pathName,$weight) {
+    @font-face {
+        font-family: '#{$family}';
+        src: url('/public/fonts/#{$pathName}.woff2') format('woff2'),
+        url('/public/fonts/#{$pathName}.woff') format('woff');
+        font-weight: #{$weight};
+        font-style: normal;
+    }
+}
+
+@include newFont($mainFontFamily,'MullerRegular',normal);
+@include newFont($mainFontFamily,'MullerBold',bold);
+@include newFont($mainFontFamily,'MullerMedium',500);
+
+
+@font-face {
+    font-family: 'icon';
+    src:  url('/fonts/icomoon.woff2?nvr12d') format('woff2'),
+    url('/fonts/icomoon.woff?nvr12d') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

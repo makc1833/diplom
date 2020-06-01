@@ -1,0 +1,37 @@
+@import '../../../../node_modules/susy/sass/susy';
+$susy: ('columns': susy-repeat(48), 'gutters': 0, 'spread': 'narrow', 'container-spread': 'narrow', );
+
+
+
+//colors
+$white: #ffffff;
+$black: #000000;
+$blackLight: #101010;
+$grayButton: #959595;
+$grayDark: #333333;
+$gray: #F9F9F9;
+$warning: #FF8F87;
+
+    //fonts
+$mainFontFamily: 'Muller';
+
+//breakpoints
+
+$tablet: 650px;
+$maxMobile: $tablet - 1px;
+
+$tabletLate: 768px;
+$maxMobileLate: $tabletLate - 1px;
+
+$desktop: 1000px;
+$maxTablet: $desktop - 1px;
+
+
+$containerCollapse: 1840px;
+$maxRems: 1440px;
+
+
+@function toRem($size) {
+    $remSize: $size / 12 + rem;
+    @return #{$remSize};
+}

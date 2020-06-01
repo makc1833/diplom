@@ -1,0 +1,87 @@
+.page{
+    &__form{
+        box-sizing: border-box;
+        padding: toRem(48) 0 toRem(65);
+        background-color: rgba($white, 1);
+        box-shadow: 0px toRem(-8) toRem(25) rgba(0, 0, 0, 0.4);
+        transform: translateY(0);
+        transition: 1s ease .5s;
+        transition-property: background-color, box-shadow, transform;
+    }
+    &__title{
+        &--form{
+            margin-bottom: toRem(24);
+        }
+        &--main{
+            margin-bottom: toRem(50);
+        }
+    }
+    &__input{
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 0;
+        width: calc(33.3333% - 2rem);
+        margin-right: toRem(24);
+    }
+    &__button{
+        &--form{
+            display: inline-block;
+            vertical-align: top;
+            min-width: 33.3333%;
+        }
+    }
+    &__main{
+        box-sizing: border-box;
+        padding-top: toRem(48);
+        margin-bottom: toRem(22);
+    }
+    &__results{
+        box-sizing: border-box;
+        padding-top: toRem(50);
+    }
+    &__table{
+        margin: 0 toRem(-60);
+    }
+    &__button-wrapper{
+        margin-top: toRem(50);
+        text-align: center;
+    }
+    &__graph-wrapper{
+        margin-top: toRem(20);
+        position: relative;
+    }
+    &__legend{
+        position: absolute;
+        top: 50%;
+        left: toRem(700);
+        transform: translateY(-50%);
+        min-width: toRem(350);
+    }
+    &__legend-item{
+        & + &{
+            margin-top: toRem(8);
+        }
+        span{
+            display: inline-block;
+            vertical-align: middle;
+            height: toRem(1);
+            width: toRem(54);
+            background-color: $black;
+            margin-right: toRem(4);
+            margin-left: toRem(1);
+            &.bold{
+                height: toRem(2);
+            }
+        }
+        p{
+            display: inline;
+            font-size: toRem(16);
+            line-height: toRem(24);
+            font-weight: 300;
+        }
+    }
+    &__graph{
+        width: toRem(600);
+        height: toRem(600);
+    }
+}

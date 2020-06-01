@@ -1,0 +1,26 @@
+.button {
+    display: inline-block;
+    &--standart{
+        padding: 0 toRem(16);
+        font-size: toRem(16);
+        height: toRem(64);
+        line-height: toRem(64);
+        border-radius: toRem(2);
+    }
+    &--gray{
+        background: rgba(149, 149, 149, 0.15);
+    }
+}
+
+
+.button {
+    &--gray{
+        transition: 0.3s ease;
+        transition-property: background-color, color, box-shadow;
+        &:hover{
+            color: $white;
+            background-color: rgba($black, 0.9);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4)
+        }
+    }
+}
