@@ -176,42 +176,8 @@
                 this.animation.form.init = false;
                 this.animation.form.show = false;
             },1500)
-            //this.testData();
         },
         methods: {
-            testData(){
-                this.range.columns.value = 9;
-                this.range.rows.value = 25;
-                this.tables.initial.headValues = [{value: 'Параметр_1'}, {value: 'Параметр_2'}, {value: 'Параметр_3'}, {value: 'Параметр_4'}, {value: 'Параметр_5'}, {value: 'Параметр_6'}, {value: 'Параметр_7'}, {value: 'Параметр_8'}, {value: 'Параметр_9'}]
-                this.tables.initial.values = [
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 2}, {value: 3}, {value: 2}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 2}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}],
-                    [{value: 1}, {value: 3}, {value: 2}, {value: 1}, {value: 2}, {value: 2}, {value: 2}, {value: 3}, {value: 2}],
-                    [{value: 2}, {value: 3}, {value: 2}, {value: 2}, {value: 2}, {value: 3}, {value: 2}, {value: 2}, {value: 2}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 2}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 1}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 2}, {value: 3}, {value: 2}, {value: 3}, {value: 2}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 1}, {value: 2}, {value: 2}, {value: 2}, {value: 2}, {value: 2}, {value: 2}, {value: 3}, {value: 2}],
-                    [{value: 1}, {value: 3}, {value: 1}, {value: 1}, {value: 1}, {value: 3}, {value: 2}, {value: 2}, {value: 2}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 2}, {value: 3}, {value: 2}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 2}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}, {value: 1}],
-                    [{value: 1}, {value: 3}, {value: 2}, {value: 1}, {value: 2}, {value: 2}, {value: 2}, {value: 3}, {value: 2}],
-                    [{value: 2}, {value: 3}, {value: 2}, {value: 2}, {value: 2}, {value: 3}, {value: 2}, {value: 2}, {value: 2}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 2}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 3}, {value: 3}, {value: 3}, {value: 1}, {value: 3}, {value: 3}, {value: 3}, {value: 3}, {value: 3}],
-                    [{value: 2}, {value: 3}, {value: 2}, {value: 3}, {value: 2}, {value: 3}, {value: 3}, {value: 3}, {value: 3}]
-                ]
-                this.calculateCorrelations();
-            },
             generateInitialTable(){
                 this.animation.main.notRemoved = true;
                 this.$nextTick(()=>{
