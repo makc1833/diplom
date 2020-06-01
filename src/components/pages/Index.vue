@@ -28,6 +28,7 @@
                 ) Вывести таблицу
         +e.main(
             ref="main"
+            v-if="animation.main.notRemoved"
             :class="{'init-am-transition': animation.main.init, 'show-all-am-items': animation.main.show}"
         )
             +e.container.container
@@ -44,6 +45,7 @@
                     ) Получить результаты
         +e.results(
             ref="results"
+            v-if="animation.results.notRemoved"
             :class="{'init-am-transition': animation.results.init, 'show-all-am-items': animation.results.show}"
         )
             +e.result
@@ -156,10 +158,12 @@
                         show: false,
                     },
                     main: {
+                        notRemoved: false,
                         init: true,
                         show: false,
                     },
                     results: {
+                        notRemoved: false,
                         init: true,
                         show: false,
                     },
@@ -209,48 +213,54 @@
                 this.calculateCorrelations();
             },
             generateInitialTable(){
-                this.animation.main.init = true;
-                setTimeout(() => {
-                    this.tables.initial.headValues = [];
-                    this.tables.initial.values = [];
-                    for (let i = 0; i < this.range.rows.value; i++) {
-                        this.tables.initial.values.push([]);
-                    }
-                    for (let i = 0; i < this.range.rows.value; i++){
-                        for (let j = 0; j < this.range.columns.value; j++) {
-                            if(i === 0){
-                                this.tables.initial.headValues.push({value: `Параметр_${j + 1}`});
-                            }
-                            this.tables.initial.values[i].push({value: 0});
-                        }
-                    }
-                    this.animation.main.show = true;
-                    this.$nextTick(()=>{
-                        this.scrollToRef('main');
-                    })
+                this.animation.main.notRemoved = true;
+                this.$nextTick(()=>{
+                    this.animation.main.init = true;
                     setTimeout(() => {
-                        this.animation.main.init = false;
-                        this.animation.main.show = false;
-                    },1000)
-                },500)
+                        this.tables.initial.headValues = [];
+                        this.tables.initial.values = [];
+                        for (let i = 0; i < this.range.rows.value; i++) {
+                            this.tables.initial.values.push([]);
+                        }
+                        for (let i = 0; i < this.range.rows.value; i++){
+                            for (let j = 0; j < this.range.columns.value; j++) {
+                                if(i === 0){
+                                    this.tables.initial.headValues.push({value: `Параметр_${j + 1}`});
+                                }
+                                this.tables.initial.values[i].push({value: 0});
+                            }
+                        }
+                        this.animation.main.show = true;
+                        this.$nextTick(()=>{
+                            this.scrollToRef('main');
+                        })
+                        setTimeout(() => {
+                            this.animation.main.init = false;
+                            this.animation.main.show = false;
+                        },1000)
+                    },500)
+                })
             },
             calculateCorrelations(){
-                this.animation.results.init = true;
-                setTimeout(() => {
-                    this.tableRanging();
-                    this.createCorrelationTables();
-                    this.calculatePirson();
-                    this.calculateSpirmen();
-                    this.calculateKendall();
-                    this.animation.results.show = true;
-                    this.$nextTick(()=>{
-                        this.scrollToRef('results');
-                    })
+                this.animation.results.notRemoved = true;
+                this.$nextTick(()=>{
+                    this.animation.results.init = true;
                     setTimeout(() => {
-                        this.animation.results.init = false;
-                        this.animation.results.show = false;
-                    },1500)
-                },500)
+                        this.tableRanging();
+                        this.createCorrelationTables();
+                        this.calculatePirson();
+                        this.calculateSpirmen();
+                        this.calculateKendall();
+                        this.animation.results.show = true;
+                        this.$nextTick(()=>{
+                            this.scrollToRef('results');
+                        })
+                        setTimeout(() => {
+                            this.animation.results.init = false;
+                            this.animation.results.show = false;
+                        },1500)
+                    },500)
+                })
             },
             tableRanging(){
                 this.tables.ranging.values = this.cloneMatrix(this.tables.initial.values);
@@ -470,7 +480,6 @@
                     ctx = canvas.getContext('2d'),
                     canvasRect = canvas.getBoundingClientRect(),
                     radius = canvasRect.height / 2 - 130;
-
                 canvas.width = canvasRect.width;
                 canvas.height = canvasRect.height;
                 let points = [];
@@ -488,8 +497,8 @@
                     let textRect = ctx.measureText(this.tables.initial.headValues[i].value);
                     ctx.fillText(
                         this.tables.initial.headValues[i].value.substring(0,10),
-                        points[i].x > canvasRect.width / 2 ?  points[i].x + 20 : points[i].x - textRect.width - 20,
-                        points[i].y > canvasRect.height / 2 ? points[i].y + 30 : points[i].y - 30);
+                        points[i].x > canvasRect.width / 2 ?  points[i].x + 10: points[i].x - textRect.width - 10,
+                        points[i].y > canvasRect.height / 2 ? points[i].y + 25: points[i].y - 25);
 
                     for (let j = 0; j < this.range.columns.value; j++){
                         if(i > j){

@@ -14,7 +14,7 @@
 
 
 
-<style lang="scss">
-    @import 'assets/scss/critical';
-    @import 'assets/scss/main';
-</style>
+<!--<style lang="scss">-->
+<!--    @import 'assets/scss/critical';-->
+<!--    @import 'assets/scss/main';-->
+<!--</style>-->

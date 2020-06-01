@@ -12,8 +12,8 @@ module.exports = {
         ? 'production'
         : 'development',
     entry: isProd ? {
-        critical: './src/assets/scss/critical.scss',
-        main: './src/assets/scss/main.scss'
+        // critical: './src/assets/scss/critical.scss',
+        // main: './src/assets/scss/main.scss'
     } : {
         // critical: './src/assets/scss/critical.scss',
         // main: './src/assets/scss/main.s3css'
