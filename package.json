@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "animated-scroll-to": "^2.0.8",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-polyfill": "^6.26.0",
     "bemto.pug": "^2.1.0",
